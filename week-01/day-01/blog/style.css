@@ -1,0 +1,49 @@
+body {
+    background-color: #e3d8f1;
+}
+
+header {
+    background-color: #5d5f71;
+    padding: 10px;
+}
+
+header h1 {
+    padding-left: 10px;
+}
+
+main {
+    width: 1000px;
+    margin: 10px auto 30px auto;
+}
+
+#add_form h5 {
+    margin-bottom: 0px;
+}
+
+#submit_button {
+    margin: 10px 0px;
+}
+
+.posts {
+    background-color: #bf8b85;
+    border: solid #ad8a64;
+    border-radius: 3px;
+    margin: 10px 0px;
+    padding: 2px 5px;
+}
+
+footer {
+    background-color: #5d5f71;
+    width: auto;
+}
+
+#social {
+    text-align: center;
+}
+
+footer img {
+    height: 50px;
+    width: 50px;
+    margin: auto 10px;
+    padding: 40px 40px;
+}

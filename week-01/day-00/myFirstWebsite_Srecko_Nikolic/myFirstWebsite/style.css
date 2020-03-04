@@ -1,0 +1,70 @@
+body {
+    background-image: url("assets/background.png");
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    margin: 20px 20px;
+}
+
+nav {
+    background-color: #333333;
+    width: auto;
+    height: 55px;
+}
+
+#image-div {
+    padding: 10px;
+    width: 50px;
+    float: left;
+}
+
+#menu {
+    float: right;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-right: 100px;
+}
+
+nav ul li {
+    float: left;
+    padding: 10px;
+    line-height: 5px;
+}
+
+nav ul li a {
+    color: #ff0099;
+}
+
+main {
+    width: 1000px;
+    margin: 100px auto;
+}
+
+#subtitle {
+     color: #ff0099;
+     margin-top: 40px;
+}
+
+#separator {
+    margin: 50px;
+}
+
+#separator h1 {
+    width: 100px;
+    display: block;
+    margin: 5px auto;
+}
+
+#wiki {
+    text-align: center;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+dd {
+    margin-left: 0px;
+}
