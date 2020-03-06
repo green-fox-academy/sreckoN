@@ -14,8 +14,7 @@ public class ParametricAverage {
         int counter = num;
         while (counter > 0) {
             System.out.println("Enter the number: ");
-            int numToSum = Integer.parseInt(in.nextLine());
-            sum += numToSum;
+            sum += Integer.parseInt(in.nextLine());
             counter--;
         }
 

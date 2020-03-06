@@ -14,8 +14,7 @@ public class AverageOfInput {
 
         for (int i = 0; i < 5; i++) {
             System.out.println("Enter a number: ");
-            double num = Double.parseDouble(in.nextLine());
-            sum += num;
+            sum += Double.parseDouble(in.nextLine());
         }
 
         System.out.println("Sum: " + sum + ", Average: " + (sum / 5));
