@@ -7,7 +7,6 @@ public class SubStr {
     }
 
     public static int subStr(String a, String b) {
-        if (!a.contains(b)) return -1;
         return a.indexOf(b);
     }
 }
