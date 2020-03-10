@@ -39,7 +39,7 @@ public class Bubble {
         for (int i = 0; i < array.length; i++) {
             desc[i] = array[array.length - 1 - i];
         }
-        return  desc;
+        return desc;
     }
 
     public static int[] advancedBubble(int[] array, boolean descending) {

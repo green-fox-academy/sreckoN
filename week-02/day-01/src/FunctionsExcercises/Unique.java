@@ -15,6 +15,36 @@ public class Unique {
     }
 
     public static int[] unique(int[] arr) {
+        int[] uniques = new int[arr.length];
+        int counter = 0;
+
+        boolean alreadyIn = false;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < uniques.length; j++) {
+                if (uniques[j] == arr[i]) {
+                    alreadyIn = true;
+                    break;
+                }
+            }
+            if (alreadyIn) {
+                alreadyIn = false;
+                continue;
+            } else {
+                uniques[counter++] = arr[i];
+            }
+        }
+
+        int[] uniquesWithoutZeros = new int[counter];
+        for (int i = 0; i < counter; i++) {
+            uniquesWithoutZeros[i] = uniques[i];
+        }
+
+        return uniquesWithoutZeros;
+    }
+
+
+
+/*    public static int[] unique(int[] arr) {
         ArrayList<Integer> uniquesList = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
@@ -30,6 +60,6 @@ public class Unique {
         }
 
         return uniqueArray;
-    }
+    }*/
 
 }
