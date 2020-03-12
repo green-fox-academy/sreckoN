@@ -3,16 +3,23 @@ package drawing;
 import javax.swing.*;
 import java.awt.*;
 
-public class Diagonals {
+public class HorizontalLines {
 
     public static void mainDraw(Graphics graphics) {
-        // Draw the canvas' diagonals.
-        // If it starts from the upper-left corner it should be green, otherwise it should be red.
-        graphics.setColor(Color.GREEN);
-        graphics.drawLine(0, 0, WIDTH, HEIGHT);
+        // Create a function that draws a single line and takes 3 parameters:
+        // The x and y coordinates of the line's starting point and the graphics
+        // and draws a 50 long horizontal line from that point.
+        // Draw at least 3 lines with that function using a loop.
+        for (int i = 0; i < 10; i++) {
+            int randomX = (int) (Math.random() * (HEIGHT - 50));
+            int randomY = (int) (Math.random() * (HEIGHT - 50));
+            drawALine(randomX, randomY, graphics);
+        }
+    }
 
-        graphics.setColor(Color.RED);
-        graphics.drawLine(WIDTH,0, 0, HEIGHT);
+    public static void drawALine(int x, int y, Graphics graphics) {
+        graphics.setColor(Color.GREEN);
+        graphics.drawLine(x, y, x + 50, y + 50);
     }
 
     // Don't touch the code below

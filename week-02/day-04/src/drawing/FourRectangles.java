@@ -3,16 +3,18 @@ package drawing;
 import javax.swing.*;
 import java.awt.*;
 
-public class Diagonals {
+public class FourRectangles {
 
-    public static void mainDraw(Graphics graphics) {
-        // Draw the canvas' diagonals.
-        // If it starts from the upper-left corner it should be green, otherwise it should be red.
-        graphics.setColor(Color.GREEN);
-        graphics.drawLine(0, 0, WIDTH, HEIGHT);
-
-        graphics.setColor(Color.RED);
-        graphics.drawLine(WIDTH,0, 0, HEIGHT);
+    public static void mainDraw(Graphics graphics){
+        // draw four different size and color rectangles.
+        // avoid code duplication.
+        for (int i = 0; i < 4; i++) {
+            int randomX = (int) (Math.random() * WIDTH);
+            int randomY = (int) (Math.random() * HEIGHT);
+            int randomWidth = (int) (10 + (Math.random() * WIDTH / 4));
+            int randomHeight = (int) (10 + (Math.random() * HEIGHT / 4));
+            graphics.fillRect(randomX, randomY, randomWidth, randomHeight);
+        }
     }
 
     // Don't touch the code below

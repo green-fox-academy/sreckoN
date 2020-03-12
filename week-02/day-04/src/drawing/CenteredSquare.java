@@ -3,16 +3,12 @@ package drawing;
 import javax.swing.*;
 import java.awt.*;
 
-public class Diagonals {
+public class CenteredSquare {
 
     public static void mainDraw(Graphics graphics) {
-        // Draw the canvas' diagonals.
-        // If it starts from the upper-left corner it should be green, otherwise it should be red.
+        // Draw a green 10x10 square to the canvas' center.
         graphics.setColor(Color.GREEN);
-        graphics.drawLine(0, 0, WIDTH, HEIGHT);
-
-        graphics.setColor(Color.RED);
-        graphics.drawLine(WIDTH,0, 0, HEIGHT);
+        graphics.fillRect((WIDTH / 2) - ((WIDTH / 4) / 2), (HEIGHT / 2) - ((HEIGHT / 4) / 2), WIDTH / 4, HEIGHT / 4);
     }
 
     // Don't touch the code below
