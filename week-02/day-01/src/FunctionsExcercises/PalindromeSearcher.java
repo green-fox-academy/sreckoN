@@ -1,12 +1,13 @@
 package FunctionsExcercises;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PalindromeSearcher {
 
     public static void main(String[] args) {
 
-        String[] results = searchPalindrome("dog goat dad duck doodle never");
+        List<String> results = searchPalindrome("dog goat dad duck doodle never");
 
         for (String s : results) {
             System.out.println(s);
@@ -15,28 +16,27 @@ public class PalindromeSearcher {
     }
 
     private static boolean isPalindrome(String word) {
-        if (word.isEmpty()) return false;
         for (int i = 0; i < word.length() / 2; i++) {
             if (word.charAt(i) != word.charAt(word.length() - 1 - i)) return false;
         }
         return true;
     }
 
-    public static String[] searchPalindrome(String sentence) {
-        if (sentence.isEmpty()) return new String[]{};
+    public static List<String> searchPalindrome(String sentence) {
+        if (sentence.isEmpty()) return new ArrayList<>();
 
-        ArrayList<String> palindromes = new ArrayList<>();
+        List<String> palindromes = new ArrayList<>();
 
-        for (int i = 0; i < sentence.length(); i++) {
+        for (int i = sentence.length() - 2; i > 0; i--) {
 
-            for (int j = i; j < sentence.length(); j++) {
-                String word = sentence.substring(i, j);
-                if (isPalindrome(word) && word.length() >= 3) palindromes.add(word);
+            for (int j = i + 2; j < sentence.length(); j++) {
+                palindromes.add(sentence.substring(i, j));
+                //if (isPalindrome(word) && word.length() >= 3) palindromes.add(word);
             }
 
         }
 
-        return palindromes.stream().toArray(String[]::new);
+        return palindromes;
     }
 
 }
