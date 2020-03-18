@@ -42,8 +42,45 @@ public class Ship {
         System.out.println("Number of alive crew members: " + numberOfAlive());
     }
 
+    private double calculateShipScore() {
+        return numberOfAlive() - this.captain.getRumLevel();
+    }
+
+    private void randomDeaths() {
+        int numberOfDeaths = (int) (1 + (Math.random()) * this.crew.size());
+        for (int i = 0; i < numberOfDeaths; i++) {
+            int toDie = (int) ((Math.random()) * this.crew.size());
+            crew.remove(toDie);
+        }
+    }
+
+    private void rumParty() {
+        int rumLevel = (int) (Math.random() * 50);
+        for (int i = 0; i < rumLevel; i++) {
+            this.captain.drinkSomeRum();
+        }
+        for (int i = 0; i < crew.size(); i++) {
+            rumLevel = (int) (Math.random() * 50);
+            for (int j = 0; j < rumLevel; j++) {
+                this.crew.get(i).drinkSomeRum();
+            }
+        }
+    }
+
     public boolean battle(Ship otherShip) {
-        // to be continued
-        return false;
+        if (this.calculateShipScore() > otherShip.calculateShipScore()) {
+            otherShip.randomDeaths();
+            this.rumParty();
+            return true;
+        } else {
+            this.randomDeaths();
+            otherShip.rumParty();
+            return false;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Captain: " + this.captain.getState() + "\tAlive crew: " + numberOfAlive();
     }
 }
