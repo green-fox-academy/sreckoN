@@ -23,13 +23,16 @@ public class Blog {
         try {
             posts.remove(i);
         } catch (IndexOutOfBoundsException e){
-            return;
+            System.out.println("There is no element in the posts list with that index.");
         }
     }
 
     public void update(int i, BlogPost newPost) {
-        posts.remove(i);
-        posts.add(i, newPost);
+        try {
+            posts.remove(i);
+            posts.add(i, newPost);
+        } catch (Exception e) {
+            System.out.println("Something went wrong with updating. Try again.");
+        }
     }
-
 }

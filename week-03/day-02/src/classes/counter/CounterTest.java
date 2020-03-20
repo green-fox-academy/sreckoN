@@ -45,5 +45,4 @@ public class CounterTest {
         c.reset();
         assertEquals(7, c.get());
     }
-
 }

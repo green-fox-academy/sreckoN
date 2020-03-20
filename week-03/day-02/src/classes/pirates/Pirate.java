@@ -25,7 +25,15 @@ public class Pirate {
         if (state == State.ALIVE) {
             this.rumLevel++;
         } else {
-            System.out.println("he's dead");
+            System.out.println("he's dead or passed out");
+        }
+    }
+
+    public void drinkSomeRum(int amount) {
+        if (state == State.ALIVE) {
+            this.rumLevel += amount;
+        } else {
+            System.out.println("he's dead or passed out");
         }
     }
 

@@ -56,14 +56,10 @@ public class Ship {
 
     private void rumParty() {
         int rumLevel = (int) (Math.random() * 50);
-        for (int i = 0; i < rumLevel; i++) {
-            this.captain.drinkSomeRum();
-        }
+        this.captain.drinkSomeRum(rumLevel);
         for (int i = 0; i < crew.size(); i++) {
             rumLevel = (int) (Math.random() * 50);
-            for (int j = 0; j < rumLevel; j++) {
-                this.crew.get(i).drinkSomeRum();
-            }
+            this.crew.get(i).drinkSomeRum(rumLevel);
         }
     }
 

@@ -7,9 +7,7 @@ public class Dominoes {
 
     public static void main(String[] args) {
         List<Domino> dominoes = initializeDominoes();
-        // You have the list of Dominoes
-        // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
-        // eg: [2, 4], [4, 3], [3, 5] ...
+
         for (int i = 0; i < dominoes.size() - 1; i++) {
             Domino current = dominoes.get(i);
             for (int j = 1 + i; j < dominoes.size(); j++) {

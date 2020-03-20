@@ -10,6 +10,5 @@ public class SharpieTest {
         pink.use();
 
         System.out.println("After: " + pink.inkAmount);
-
     }
 }

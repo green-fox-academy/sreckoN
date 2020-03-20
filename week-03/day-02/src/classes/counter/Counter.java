@@ -29,5 +29,4 @@ public class Counter {
     public void reset() {
         this.value = initialValue;
     }
-
 }

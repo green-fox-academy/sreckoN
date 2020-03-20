@@ -22,5 +22,4 @@ public class Fleet {
         }
         return result;
     }
-
 }

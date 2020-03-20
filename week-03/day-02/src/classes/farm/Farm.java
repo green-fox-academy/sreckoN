@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Farm {
 
-    List<Animal> animals;
-    int freeSpace;
+    private List<Animal> animals;
+    private int freeSpace;
 
     public Farm() {
         this.animals = new ArrayList<>();

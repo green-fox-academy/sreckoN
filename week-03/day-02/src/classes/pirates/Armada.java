@@ -39,19 +39,6 @@ public class Armada {
     }
   }
 
-
-  /*for (int i = 0; i < this.ships.size(); i++) {
-
-      for (int j = 0; j < otherArmada.ships.size(); j++) {
-        if (this.ships.get(i).battle(otherArmada.ships.get(j))) {
-          continue;
-        } else {
-          break;
-        }
-      }
-
-    }*/
-
   @Override
   public String toString() {
     String str = "";
