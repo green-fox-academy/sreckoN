@@ -76,9 +76,4 @@ class LettersCounterTest {
       assertEquals(expected.get(key), actual.get(key));
     }
   }
-
-  @Test
-  void countLettersDoesNotTrowExceptions() {
-    assertDoesNotThrow(() -> counter.countLetters("randomness"));
-  }
 }

@@ -1,3 +1,5 @@
+package apples;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import apples.Apples;
@@ -13,12 +15,7 @@ class ApplesTest {
     apples = new Apples();
   }
 
-  @Test
-  void getAppleShoudNotReturnNull() {
-    assertNotNull(apples.getApple());
-  }
-
-  @Test
+ @Test
   void getAppleShouldReturnString() {
     assertTrue(apples.getApple() instanceof String);
   }
@@ -26,10 +23,5 @@ class ApplesTest {
   @Test
   void getAppleShouldReturnStringContainingWordApple() {
     assertEquals("apple", apples.getApple());
-  }
-
-  @Test
-  void getAppleDoesNotThrowExceptions() {
-    assertDoesNotThrow(() -> apples.getApple());
   }
 }

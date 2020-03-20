@@ -12,5 +12,4 @@ public class Summation {
     }
     return sum;
   }
-
 }
