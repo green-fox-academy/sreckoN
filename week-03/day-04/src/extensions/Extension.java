@@ -32,6 +32,7 @@ public class Extension {
 
   String translate(String hungarianWord) {
     if (hungarianWord == null || hungarianWord.isEmpty()) return null;
+
     String word = "";
     for (int i = 0; i < hungarianWord.length(); i++) {
       if (isVowel(hungarianWord.charAt(i))) {

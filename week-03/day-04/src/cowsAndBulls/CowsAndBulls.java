@@ -1,6 +1,8 @@
 package cowsAndBulls;
 
 import com.sun.corba.se.impl.resolver.SplitLocalResolverImpl;
+import java.util.Arrays;
+import java.util.List;
 
 public class CowsAndBulls {
 
@@ -16,17 +18,10 @@ public class CowsAndBulls {
     if (guess == numberToGuess) {
       return "4 cows";
     }
-    StringBuilder guessString = new StringBuilder(guess);
-    StringBuilder numberToGuessString = new StringBuilder(numberToGuess);
 
-    int cows = 0;
-    int bulls = 0;
+    // HM
 
-    for (int i = 0; i < guessString.length(); i++) {
-
-      
-    }
-    return makeCowBullString(cows, bulls);
+    return "";
   }
 
   private String makeCowBullString(int cows, int bulls) {

@@ -1,11 +1,19 @@
 package anagram;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import javax.print.DocFlavor.CHAR_ARRAY;
 
 public class Anagram {
 
-  public boolean isAnagram(String word1, String word2) {
-    if (word1 == null || word1.isEmpty() || word2 == null || word2.isEmpty()) return false;
+  private boolean isNullOrBlank(String s){
+    return s == null || s.isEmpty();
+  }
+
+  /*public boolean isAnagram(String word1, String word2) {
+    if (isNullOrBlank(word1) || isNullOrBlank(word2)) return false;
+
     if (word1.length() != word2.length()) return false;
 
     char[] w1 = word1.toLowerCase().toCharArray();
@@ -18,6 +26,37 @@ public class Anagram {
       if (w1[i] != w2[i]) return false;
     }
 
+    return true;
+  }*/
+  private Map<Character, Integer> makeCharMap(String word) {
+    Map<Character, Integer> charsMap = new HashMap<>();
+    for (int i = 0; i < word.length(); i++) {
+      char key = word.charAt(i);
+      if (charsMap.containsKey(key)) {
+        charsMap.put(key, charsMap.get(key) + 1);
+      } else {
+        charsMap.put(key, 0);
+      }
+    }
+    return charsMap;
+  }
+
+  public boolean isAnagram(String word1, String word2) {
+    if (isNullOrBlank(word1) || isNullOrBlank(word2)) return false;
+
+    if (word1.length() != word2.length()) return false;
+
+    Map<Character, Integer> firstWord = makeCharMap(word1);
+    Map<Character, Integer> secondWord = makeCharMap(word2);
+
+    for (Character key : firstWord.keySet()) {
+      if (!secondWord.containsKey(key)) {
+        return false;
+      }
+      if (firstWord.get(key) != secondWord.get(key)) {
+        return false;
+      }
+    }
     return true;
   }
 }
