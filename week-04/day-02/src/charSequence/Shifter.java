@@ -1,11 +1,13 @@
 package charSequence;
 
-public class Gnirts implements CharSequence {
+public class Shifter implements CharSequence {
 
   private String str;
+  private int shift;
 
-  public Gnirts(String str) {
+  public Shifter(String str, int shift) {
     this.str = str;
+    this.shift = shift;
   }
 
   @Override
@@ -20,7 +22,15 @@ public class Gnirts implements CharSequence {
 
   @Override
   public char charAt(int i) {
-    return str.toCharArray()[length() - 1 - i];
+    int index = 0;
+    if ((i + shift) > length()) {
+      while (index > length()) {
+        index = ((i + shift) - length());
+      }
+    } else {
+      index = (i + shift);
+    }
+    return str.toCharArray()[index];
   }
 
   @Override
