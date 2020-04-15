@@ -1,5 +1,10 @@
 package streamExercises;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -34,5 +39,20 @@ public class Streams {
   public static int countCharFrequency(List<Character> chars, char c) {
     final Character character = Character.valueOf(c);
     return (int) chars.stream().filter((s) -> s == character).count();
+  }
+
+  public static void printHundredMostCommonWords(String filename) {
+    List<String> lines = readFile(filename);
+    
+  }
+
+  private static List<String> readFile(String filename) {
+    try {
+      Path filepath = Paths.get(filename);
+      List<String> lines = Files.readAllLines(filepath);
+      return lines;
+    } catch (IOException e) {
+      return null;
+    }
   }
 }

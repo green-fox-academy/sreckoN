@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form action="/login" method="POST">
+        <div id="page-label">
+            <h2>ACCOUNT LOGIN</h2>
+        </div>
+        <div id="username-div">
+            <label for="username">USERNAME</label>
+            <textarea id="username" rows="1" maxlength="12" autofocus required></textarea>
+        </div>
+        <div id="password-id">
+            <label for="password-field">PASSWORD</label>
+            <input type="password" id="password-field" maxlength="16" required>
+            <a href="">Forgot password?</a>
+        </div>
+        <div id="submit-div">
+            <input id="submit-button" type="submit" value="Login">
+        </div>
+    </form>
+</body>
+</html>

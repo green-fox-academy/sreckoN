@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form method="POST" action="https://newsletter-ws.herokuapp.com/register">
+        <div id="left-column">
+            <div id="form-label">
+                <h2>Sign up</h2>
+            </div>
+            <div id="sign-up">
+                <input type="name" name="username" placeholder="Username" required>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password-retype" placeholder="Retype password" required>
+            </div>
+            <div id="button-div">
+                <input type="submit" value="Sign me up">
+            </div>
+        </div>
+        <div id="middle-column">
+            <div id="or">
+                <input id="test" type="button" disabled value="OR">
+            </div>
+        </div>
+        <div id="right-column">
+            <div id="login">
+                <a class="button-link" id="facebook" href="http://www.facebook.com" role="button">Log in with Facebook</a>
+                <a class="button-link" id="twitter" href="http://www.twitter.com" role="button">Log in with Twitter</a>
+                <a class="button-link" id="google" href="http://www.google.com" role="button">Log in with Google+</a>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
