@@ -22,20 +22,7 @@
     </div>
   </nav>
   <main>
-    <table>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Quantity of Stock</th>
-      </tr>
-      <tr th:each="item : ${items}">
-        <td class="td-left" th:text="${item.getName()}"></td>
-        <td class="td-left" th:text="${item.getDescription()}"></td>
-        <td class="td-center" th:text="${item.getPrice()}"></td>
-        <td class="td-center" th:text="${item.getQuantityOfStock()}"></td>
-      </tr>
-    </table>
+    <h1 th:text="${text}"></h1>
   </main>
 </body>
 </html>
