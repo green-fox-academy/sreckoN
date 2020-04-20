@@ -19,4 +19,8 @@ public class Webshop {
   public List<Item> getNike() {
     return items.stream().filter(item -> item.getName().toLowerCase().contains("nike")).collect(Collectors.toList());
   }
+
+  public List<Item> sortByPriceAscending() {
+    return null;
+  }
 }
