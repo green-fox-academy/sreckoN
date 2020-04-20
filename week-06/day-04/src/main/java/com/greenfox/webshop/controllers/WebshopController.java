@@ -14,8 +14,6 @@ public class WebshopController {
 
   @RequestMapping("/webshop")
   public String home(Model model) {
-    shop.addItem(new Item("Running shoes", "Nike shoes for running", 112.3, 5));
-    shop.addItem(new Item("Bagel", "Bagel with ham and cheese", 50.0, 0));
     model.addAttribute("items", shop.getItems());
     return "index";
   }

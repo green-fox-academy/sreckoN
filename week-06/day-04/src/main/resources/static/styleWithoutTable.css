@@ -1,0 +1,33 @@
+body {
+  width: 70%;
+  margin: auto;
+}
+
+header {
+  color: #2ee8e1;
+}
+
+hr {
+  color: #2ee8e1;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  /*align-items: flex-start;*/
+  color: white;
+}
+
+nav ul li {
+  background-color: #f72e2e;
+  margin: 10px;
+  padding: 7px;
+  border: none;
+  border-radius: 6px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
