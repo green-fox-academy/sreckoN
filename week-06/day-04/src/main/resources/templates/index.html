@@ -11,7 +11,6 @@
       <h1>My Webshop</h1>
       <hr>
     </header>
-    <div>
       <ul>
         <li><a href="/only-available">Only available</a></li>
         <li><a href="/cheapest-first">Cheapest first</a></li>
@@ -19,9 +18,15 @@
         <li><a href="/average-stock">Average stock</a></li>
         <li><a href="/most-expensive">Most expensive available</a></li>
       </ul>
-    </div>
   </nav>
   <main>
+    <div id="search-bar-div">
+      <form action="#" th:action="@{/search}" th:object="${searchTerm}" method="post">
+        <label for="search-bar">Search for:</label>
+        <input id="search-bar" type="text" name="searchTerm" placeholder="...something like nike">
+        <input id="submit-bttn" type="submit" value="Search" formmethod="post">
+      </form>
+    </div>
     <table>
       <tr>
         <th>Name</th>

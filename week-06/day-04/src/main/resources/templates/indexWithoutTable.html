@@ -22,6 +22,13 @@
     </div>
   </nav>
   <main>
+    <div id="search-bar-div">
+      <form action="#" th:action="@{/search}" th:object="${searchTerm}" method="post">
+        <label for="search-bar">Search for:</label>
+        <input id="search-bar" type="text" name="searchTerm" placeholder="...something like nike">
+        <input id="submit-bttn" type="submit" value="Search" formmethod="post">
+      </form>
+    </div>
     <h1 th:text="${text}"></h1>
   </main>
 </body>

@@ -15,13 +15,14 @@ nav ul {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  /*align-items: flex-start;*/
+  padding: 0px;
   color: white;
 }
 
 nav ul li {
   background-color: #f72e2e;
   margin: 10px;
+  margin-left: 0px;
   padding: 7px;
   border: none;
   border-radius: 6px;
@@ -30,4 +31,29 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
+}
+
+#search-bar-div label {
+  display: block;
+  color: orangered;
+}
+
+#search-bar-div {
+  margin-bottom: 50px;
+}
+
+#search-bar {
+  width: 60%;
+  border: 2px solid #f72e2e;
+  border-radius: 6px;
+  padding: 9px;
+}
+
+#submit-bttn {
+  height: 39px;
+  width: 120px;
+  background-color: #f72e2e;
+  color: white;
+  border: none;
+  border-radius: 6px;
 }

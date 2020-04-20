@@ -49,6 +49,12 @@ public class Webshop {
         .getName();
   }
 
+  public List<Item> search(String term) {
+    return items.stream()
+        .filter(item -> item.getName().toLowerCase().contains(term) || item.getDescription().toLowerCase().contains(term))
+        .collect(Collectors.toList());
+  }
+
   public List<Item> getItems() {
     return items;
   }
