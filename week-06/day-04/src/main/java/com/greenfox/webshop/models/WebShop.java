@@ -5,11 +5,11 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Webshop {
+public class WebShop {
 
   private List<Item> items;
 
-  public Webshop() {
+  public WebShop() {
     this.items = new ArrayList<>();
   }
 

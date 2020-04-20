@@ -1,25 +1,25 @@
 package com.greenfox.webshop.controllers;
 
 import com.greenfox.webshop.models.Item;
-import com.greenfox.webshop.models.Webshop;
-import javax.jws.WebParam.Mode;
+import com.greenfox.webshop.models.WebShop;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class WebshopController {
+public class WebShopController {
 
-  private Webshop shop = new Webshop();
+  private WebShop shop = new WebShop();
+
+  public WebShopController() {
+    shop.addItem(new Item("Running shoes", "Nike shoes for running", 120.5, 3));
+    shop.addItem(new Item("Printer", "Prints pages", 63.25, 12));
+  }
 
   @GetMapping("/webshop")
   public String home(Model model) {
-    shop.addItem(new Item("Running shoes", "Nike shoes for running", 120.5, 3));
-    shop.addItem(new Item("Printer", "Prints pages", 63.25, 12));
     model.addAttribute("items", shop.getItems());
     return "index";
   }
