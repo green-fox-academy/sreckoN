@@ -18,6 +18,10 @@ public class Item {
     return quantityOfStock;
   }
 
+  public double getPrice() {
+    return price;
+  }
+
   public String getName() {
     return name;
   }
