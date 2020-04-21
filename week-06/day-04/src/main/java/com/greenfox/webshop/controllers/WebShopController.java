@@ -1,6 +1,7 @@
 package com.greenfox.webshop.controllers;
 
 import com.greenfox.webshop.models.Item;
+import com.greenfox.webshop.models.ItemType;
 import com.greenfox.webshop.models.WebShop;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,8 +15,8 @@ public class WebShopController {
   private WebShop shop = new WebShop();
 
   public WebShopController() {
-    shop.addItem(new Item("Running shoes", "Nike shoes for running", 120.5, 3));
-    shop.addItem(new Item("Printer", "Prints pages", 63.25, 12));
+    shop.addItem(new Item("Running shoes", "Nike shoes for running", 120.5, 3, ItemType.CLOTHES_AND_SHOES));
+    shop.addItem(new Item("Printer", "Prints pages", 63.25, 12, ItemType.ELECTRONICS));
   }
 
   @GetMapping("/webshop")
@@ -65,5 +66,22 @@ public class WebShopController {
   public String searchFormSubmit(@RequestParam(value = "searchTerm", defaultValue = "") String searchTerm, Model model) {
     model.addAttribute("items", shop.search(searchTerm));
     return "index";
+  }
+
+  @GetMapping("/more-filters")
+  public String filtersPage(Model model) {
+    return "filtered";
+  }
+
+  @GetMapping("/filter-by-type")
+  public String filterByType(Model model) {
+    model.addAttribute("type", ItemType.class);
+    return "filtered";
+  }
+
+  @PostMapping("/filter-by-type")
+  public String filterByTypeSubmit(@RequestParam(value = "type", defaultValue = "CLOTHES_AND_SHOES") ItemType type, Model model) {
+    model.addAttribute("items", shop.filterByType(type));
+    return "filtered";
   }
 }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Show Accounts</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Balance</th>
+      <th>Animal Type</th>
+    </tr>
+    <tr th:each="account : ${accounts}" th:object="${account}">
+      <td th:text="${accountStat.index}"></td>
+      <td th:text="*{name}"></td>
+      <td th:text="*{balance} + ' Zebra'"></td>
+      <td th:text="*{animalType}"></td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -55,6 +55,11 @@ public class WebShop {
         .collect(Collectors.toList());
   }
 
+  public List<Item> filterByType(ItemType type) {
+    return items.stream()
+        .filter(item -> item.getType() == type).collect(Collectors.toList());
+  }
+
   public List<Item> getItems() {
     return items;
   }

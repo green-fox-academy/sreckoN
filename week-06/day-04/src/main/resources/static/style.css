@@ -8,6 +8,16 @@ header {
   color: #2ee8e1;
 }
 
+header a {
+  text-decoration: none;
+  color: #2ee8e1;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+}
+
 hr {
   color: #2ee8e1;
 }
@@ -22,8 +32,7 @@ nav ul {
 
 nav ul li {
   background-color: #f72e2e;
-  margin: 10px;
-  margin-left: 0px;
+  margin: 10px 10px 10px 0px;
   padding: 7px;
   border: none;
   border-radius: 6px;

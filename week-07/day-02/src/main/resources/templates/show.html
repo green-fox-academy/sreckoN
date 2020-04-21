@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Accounts</title>
+</head>
+<body>
+  <table th:if="${simba != null}">
+    <tr>
+      <th>Name</th>
+      <th>Balance</th>
+      <th>Animal Type</th>
+    </tr>
+    <tr>
+      <td th:text="${simba.name}"></td>
+      <td th:text="${#numbers.formatDecimal(simba.balance, 0, 2)} + ' Zebra'"></td>
+      <td th:text="${simba.animalType}"></td>
+    </tr>
+  </table>
+  <div th:if="${tekst != null && !tekst.isEmpty()}">
+    <p th:text="${tekst}"></p>
+    <p th:utext="${tekst}"></p>
+  </div>
+</body>
+</html>

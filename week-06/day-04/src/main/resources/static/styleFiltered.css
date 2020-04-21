@@ -1,6 +1,7 @@
 body {
   width: 70%;
   margin: auto;
+  font-family: sans-serif;
 }
 
 header {
@@ -31,8 +32,7 @@ nav ul {
 
 nav ul li {
   background-color: #f72e2e;
-  margin: 10px;
-  margin-left: 0px;
+  margin: 10px 10px 10px 0px;
   padding: 7px;
   border: none;
   border-radius: 6px;
@@ -41,6 +41,29 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: white;
+}
+
+table {
+  width: 90%;
+  margin: auto;
+}
+
+th {
+  background-color: #2ee8e1;
+  padding: 20px;
+}
+
+td {
+  padding: 20px;
+}
+
+.td-center {
+  text-align: center;
+  vertical-align: center;
+}
+
+.td-left {
+  padding-left: 2px;
 }
 
 #search-bar-div label {
@@ -53,13 +76,13 @@ nav ul li a {
 }
 
 #search-bar {
-  width: 60%;
+  width: 40%;
   border: 2px solid #f72e2e;
   border-radius: 6px;
   padding: 9px;
 }
 
-#submit-bttn {
+input[type="submit"] {
   height: 39px;
   width: 120px;
   background-color: #f72e2e;

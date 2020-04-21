@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Webshop</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/styleFiltered.css" />
 </head>
 <body>
   <nav>
@@ -15,32 +15,32 @@
       <hr>
     </header>
       <ul>
-        <li><a href="/only-available">Only available</a></li>
-        <li><a href="/cheapest-first">Cheapest first</a></li>
-        <li><a href="/contains-nike">Contains Nike</a></li>
-        <li><a href="/average-stock">Average stock</a></li>
-        <li><a href="/most-expensive">Most expensive available</a></li>
+        <li><a href="/filter-by-type">CLOTHES AND SHOES</a></li>
+        <li><a href="/cheapest-first">ELECTRONICS</a></li>
+        <li><a href="/contains-nike">BEVERAGES AND SNACKS</a></li>
+        <li><a href="/average-stock">EURO</a></li>
+        <li><a href="/most-expensive">ORIGINAL CURRENCY</a></li>
       </ul>
   </nav>
   <main>
     <div id="search-bar-div">
       <form action="#" th:action="@{/search}" th:object="${searchTerm}" method="post">
-        <label for="search-bar">Search for:</label>
-        <input id="search-bar" type="text" name="searchTerm" placeholder="...something like nike">
-        <input id="submit-bttn" type="submit" value="Search" formmethod="post">
+        <label for="search-bar">Filter by price:</label>
+        <input id="search-bar" type="text" name="searchTerm" placeholder="...e.g.: 300">
+        <input id="submit-bttn-above" type="submit" value="Above" formmethod="post">
+        <input id="submit-bttn-belove" type="submit" value="Below" formmethod="post">
+        <input id="submit-bttn-exactly" type="submit" value="Exactly" formmethod="post">
       </form>
     </div>
     <table>
       <tr>
         <th>Name</th>
-        <th>Type</th>
         <th>Description</th>
         <th>Price</th>
         <th>Quantity of Stock</th>
       </tr>
       <tr th:each="item : ${items}">
         <td class="td-left" th:text="${item.getName()}"></td>
-        <td class="td-left" th:text="${item.getTypr()}"></td>
         <td class="td-left" th:text="${item.getDescription()}"></td>
         <td class="td-center" th:text="${item.getPrice()}"></td>
         <td class="td-center" th:text="${item.getQuantityOfStock()}"></td>
