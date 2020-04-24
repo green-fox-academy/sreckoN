@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Email Check</title>
+</head>
+<body>
+  <div th:if="${flag}">
+    <p th:text="${message}" th:style="'color:' + ${colorValue} + ';'"></p>
+  </div>
+  <div th:unless="${flag}">
+    <p th:text="${message}" th:style="'color:' + ${colorValue} + ';'"></p>
+  </div>
+  <!--<p th:if="${flag}" th:text="${message}" th:style="color: green;"></p>
+  <p th:unless="${flag}" th:text="${message}" th:style="color: red;"></p>-->
+</body>
+</html>
