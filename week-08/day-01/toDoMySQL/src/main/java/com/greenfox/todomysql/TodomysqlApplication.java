@@ -23,10 +23,10 @@ public class TodomysqlApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
-    repository.save(new Todo("Run the run", false, true));
-    repository.save(new Todo("Walk the walk", true, false));
-    repository.save(new Todo("Talk the talk", true, true));
-    repository.save(new Todo("Block the block", false, false));
-    repository.save(new Todo("Rock the rock", true, false));
+    repository.save(new Todo("Run the run"));
+    repository.save(new Todo("Walk the walk"));
+    repository.save(new Todo("Talk the talk"));
+    repository.save(new Todo("Block the block"));
+    repository.save(new Todo("Rock the rock"));
   }
 }

@@ -1,10 +1,13 @@
 package com.greenfox.todomysql.controller;
 
+import com.greenfox.todomysql.model.Todo;
 import com.greenfox.todomysql.repository.ToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -33,5 +36,15 @@ public class TodoController {
     return "todolist";
   }
 
+  @GetMapping("/todo/add")
+  public String getAddPage(Model model) {
+    model.addAttribute("todo", new Todo());
+    return "addTodo";
+  }
 
+  @PostMapping("/todo/add")
+  public String submitNewTodo(@ModelAttribute Todo todo) {
+    repository.save(todo);
+    return "redirect:/list";
+  }
 }
