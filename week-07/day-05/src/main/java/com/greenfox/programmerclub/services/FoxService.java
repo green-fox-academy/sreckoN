@@ -28,4 +28,11 @@ public class FoxService {
   public boolean isFoxAlreadyIn(String name) {
     return foxes.contains(name);
   }
+
+  public Fox getFoxByName(String name) {
+    if (!isFoxAlreadyIn(name)) {
+      return null;
+    }
+    return foxes.get(foxes.indexOf(name));
+  }
 }
