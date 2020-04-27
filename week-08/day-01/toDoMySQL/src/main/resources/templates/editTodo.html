@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Todo</title>
+</head>
+<body>
+<h1>Edit Todo</h1>
+  <form th:object="${todoByID}" th:action="@{'/' + ${todoByID.id} + '/edit'}" method="post">
+    <label for="descr">Todo description:</label>
+    <input type="text" id="descr" th:field="*{title}" th:value="*{title}">
+    <label for="ckBoxUrgent">Urgent</label>
+    <input type="checkbox" id="ckBoxUrgent" th:field="*{urgent}" th:value="*{urgent}">
+    <label>Done</label>
+    <input type="checkbox" id="ckBoxDone" th:field="*{done}" th:value="*{done}">
+    <button type="submit">Submit</button>
+    <a href="/list">Cancel</a>
+  </form>
+</body>
+</html>

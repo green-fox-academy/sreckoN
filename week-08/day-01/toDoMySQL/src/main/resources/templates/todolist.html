@@ -20,6 +20,7 @@
       <td th:text="*{urgent}"></td>
       <td th:text="*{done}"></td>
       <td><a th:href="@{'/' + *{id} + '/delete'}">delete</a></td>
+      <td><a th:href="@{'/' + *{id} + '/edit'}">edit</a></td>
     </tr>
   </table>
 </body>

@@ -2,6 +2,7 @@ package com.greenfox.todomysql.controller;
 
 import com.greenfox.todomysql.model.Todo;
 import com.greenfox.todomysql.repository.ToDoRepository;
+import javax.jws.WebParam.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,6 +53,18 @@ public class TodoController {
   @GetMapping("/{id}/delete")
   public String delete(@PathVariable long id) {
     repository.deleteById(id);
+    return "redirect:/list";
+  }
+
+  @GetMapping("/{id}/edit")
+  public String update(@PathVariable long id, Model model) {
+    model.addAttribute("todoByID", repository.findById(id).get());
+    return "editTodo";
+  }
+
+  @PostMapping("/{id}/edit")
+  public String updateSubmit(@PathVariable long id, @ModelAttribute Todo todo) {
+    repository.save(todo);
     return "redirect:/list";
   }
 }
