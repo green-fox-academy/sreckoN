@@ -1,9 +1,13 @@
 package com.greenfox.todomysql.model;
 
+import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Todo {
@@ -14,11 +18,21 @@ public class Todo {
   private String title;
   private boolean urgent = false;
   private boolean done = false;
+  private Date date;
+  private String dueDate;
+
+  @ManyToOne(fetch = FetchType.EAGER)
+  private Assignee assignee;
+
+  public Todo(String title, Assignee assignee) {
+    this.title = title;
+    this.assignee = assignee;
+    this.date = new Date();
+    this.dueDate = new String();
+  }
 
   public Todo(String title) {
-    this.title = title;
-    this.urgent = urgent;
-    this.done = done;
+    this(title, null);
   }
 
   public Todo() {
@@ -26,10 +40,6 @@ public class Todo {
 
   public long getId() {
     return id;
-  }
-
-  public void setId(long id) {
-    this.id = id;
   }
 
   public String getTitle() {
@@ -54,5 +64,29 @@ public class Todo {
 
   public void setDone(boolean done) {
     this.done = done;
+  }
+
+  public Date getDate() {
+    return date;
+  }
+
+  public void setDate(Date date) {
+    this.date = date;
+  }
+
+  public String getDueDate() {
+    return dueDate;
+  }
+
+  public void setDueDate(String dueDate) {
+    this.dueDate = dueDate;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 }

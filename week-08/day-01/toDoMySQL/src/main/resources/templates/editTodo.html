@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Edit Todo</title>
@@ -8,11 +8,16 @@
 <h1>Edit Todo</h1>
   <form th:object="${todoByID}" th:action="@{'/' + ${todoByID.id} + '/edit'}" method="post">
     <label for="descr">Todo description:</label>
-    <input type="text" id="descr" th:field="*{title}" th:value="*{title}">
+    <input type="text" id="descr" th:field="*{title}" th:value="*{title}"><br>
     <label for="ckBoxUrgent">Urgent</label>
     <input type="checkbox" id="ckBoxUrgent" th:field="*{urgent}" th:value="*{urgent}">
     <label>Done</label>
-    <input type="checkbox" id="ckBoxDone" th:field="*{done}" th:value="*{done}">
+    <input type="checkbox" id="ckBoxDone" th:field="*{done}" th:value="*{done}"><br>
+    <input type="date" id="date" pattern="yyyy-MM-dd" th:field="*{dueDate}" th:value="*{dueDate}"><br>
+    <label for="dropdasgnee">Assignee:</label>
+    <select id="dropdasgnee" >
+      <option th:each="assigneeList : ${assignees}" th:value="${assigneeList}" th:field="*{assignee}" th:text="${assigneeList.name}"></option>
+    </select><br>
     <button type="submit">Submit</button>
     <a href="/list">Cancel</a>
   </form>
