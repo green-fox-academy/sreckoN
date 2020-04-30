@@ -15,8 +15,8 @@
     <input type="checkbox" id="ckBoxDone" th:field="*{done}" th:value="*{done}"><br>
     <input type="date" id="date" pattern="yyyy-MM-dd" th:field="*{dueDate}" th:value="*{dueDate}"><br>
     <label for="dropdasgnee">Assignee:</label>
-    <select id="dropdasgnee" >
-      <option th:each="assigneeList : ${assignees}" th:value="${assigneeList}" th:field="*{assignee}" th:text="${assigneeList.name}"></option>
+    <select id="dropdasgnee" th:field="*{assignee.id}">
+      <option th:each="assigneeList : ${assignees}" th:value="${assigneeList.id}" th:text="${assigneeList.name}"></option>
     </select><br>
     <button type="submit">Submit</button>
     <a href="/list">Cancel</a>

@@ -89,4 +89,8 @@ public class Todo {
   public void setAssignee(Assignee assignee) {
     this.assignee = assignee;
   }
+
+  public void setId(long id) {
+    this.id = id;
+  }
 }

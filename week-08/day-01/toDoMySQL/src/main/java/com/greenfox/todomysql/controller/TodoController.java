@@ -69,7 +69,6 @@ public class TodoController {
     Optional<Todo> result = toDoService.findByID(id);
     if (result.isPresent()) {
       model.addAttribute("assignees", assigneeService.getAllAssignees());
-      //model.addAttribute("newAssignee", new Assignee());
       model.addAttribute("todoByID", result.get());
       model.addAttribute("date", new GregorianCalendar());
     }
@@ -78,6 +77,7 @@ public class TodoController {
 
   @PostMapping("/{id}/edit")
   public String updateSubmit(@PathVariable long id, @ModelAttribute Todo todo) {
+    todo.setId(id);
     toDoService.addTodo(todo);
     return "redirect:/list";
   }
